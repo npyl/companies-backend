@@ -1,4 +1,4 @@
-package org.npyl.companiesbackend.api;
+package org.npyl.companiesbackend.api.request;
 
 public class NewEmployeeRequest {
     String name;

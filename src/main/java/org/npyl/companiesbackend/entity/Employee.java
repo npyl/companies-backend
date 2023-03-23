@@ -1,10 +1,10 @@
-package org.npyl.companiesbackend.api;
+package org.npyl.companiesbackend.entity;
 
-public class NewEmployeeResponse {
-    String name;
-    String company;
+public class Employee {
+    public String name;
+    public String company;
 
-    public NewEmployeeResponse(String name, String company) {
+    public Employee(String name, String company) {
         this.name = name;
         this.company = company;
     }
@@ -24,5 +24,4 @@ public class NewEmployeeResponse {
     public void setCompany(String company) {
         this.company = company;
     }
-
 }
