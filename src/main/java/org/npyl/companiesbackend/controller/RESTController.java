@@ -1,5 +1,7 @@
 package org.npyl.companiesbackend.controller;
 
+import org.npyl.companiesbackend.api.NewEmployeeRequest;
+import org.npyl.companiesbackend.api.NewEmployeeResponse;
 import org.npyl.companiesbackend.entity.Company;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +10,7 @@ import java.util.List;
 
 @RestController
 public class RESTController {
+
     @GetMapping("/companies-list")
     public List<Company> getCompaniesList()
     {
@@ -20,8 +23,13 @@ public class RESTController {
     }
 
     @PostMapping("/new-employee")
-    public String newEmployee(@RequestBody String body)
+    public NewEmployeeResponse newEmployee(@RequestBody NewEmployeeRequest body)
     {
-        return body;
+        System.out.println("name: " + body.getName() + " password: " + body.getPassword() + " company: " + body.getCompany());
+
+        // TODO: mapper
+        NewEmployeeResponse response = new NewEmployeeResponse(body.getName(), body.getCompany());
+
+        return response;
     }
 }
