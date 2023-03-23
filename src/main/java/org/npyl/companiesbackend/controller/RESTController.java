@@ -44,6 +44,10 @@ public class RESTController {
         // TODO: mapper
         Employee employee = new Employee(body.getName(), body.getCompany());
 
+        // get id from newly-created employee
+        response.setId(employee.getId());
+        response.setRole(employee.getRole());
+
         // Add employee to our "DB"
         employeeHandler.addEmployee(employee);
 

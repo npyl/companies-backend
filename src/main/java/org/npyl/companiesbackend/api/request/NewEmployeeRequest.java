@@ -1,9 +1,11 @@
 package org.npyl.companiesbackend.api.request;
 
 public class NewEmployeeRequest {
-    String name;
-    String password;
-    String company;
+    private String name;
+    private String password;
+
+    private String role;
+    private String company;
 
     public String getName() {
         return name;
@@ -27,5 +29,13 @@ public class NewEmployeeRequest {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
